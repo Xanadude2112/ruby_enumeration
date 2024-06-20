@@ -1,5 +1,5 @@
 require 'active_support/all'
-
+require './candidates'
 # Takes in an id
 # Returns the candidate with that :id
 # If there is no candidate with that id, it naturally returns nil

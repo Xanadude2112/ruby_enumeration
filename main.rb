@@ -8,19 +8,12 @@ require './filters'
 
 pp @candidates
 
-# Example of using the filters
-puts "Experienced Candidates"
-experience = experienced?(@candidates)
-pp experience
+@candidates.each do |candidate|
+  pp "EXPERIENCE: #{experienced?(candidate)}"
+  pp  "ID:  #{find(candidate[:id])}"
+  pp  "QUALIFIED:  #{qualified_candidates(@candidates)}"
+  pp  "RANKING:  #{ordered_by_qualifications(@candidates)}"
+end
 
-puts "Candidate ID"
-id = find(@candidates)
-pp id
 
-puts "Qualified Candidates:"
-qualified = qualified_candidates?(@candidates)
-pp qualified
 
-puts "Candidates Ordered by Qualifications:"
-ordered = ordered_by_qualifications?(@candidates)
-pp ordered
